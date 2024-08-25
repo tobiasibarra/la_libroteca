@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" *ngFor="let t of titulos">{{t}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let l of libros">
+                        
+                        <!-- <td (click)="mostrarDetalle(l)">{{l.codigo}}</td>  -->
+                        <td (click)="mostrarDetalle(l)">{{l.editorial}}</td>   
+                        <td (click)="mostrarDetalle(l)">{{l.nombre}} {{l.descripcion}}</td>  
+                        <td (click)="mostrarDetalle(l)">{{l.precio | currency }}</td> 
+                        <td (click)="mostrarDetalle(l)">
+                        <img [src]="l.imagen" style="width: 150px;">
+                        </td>
+                        <td> 
+                             <button (click)="comprarItem(l)" type="button" class="button">
+                                <span class="button__text">Agregar</span>
+                                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                              </button>
+                           </td>      
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+</div>

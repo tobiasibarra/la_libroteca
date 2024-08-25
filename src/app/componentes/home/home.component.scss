@@ -1,0 +1,41 @@
+
+
+body{
+    background-color: grey;
+  }
+  
+  .menu {
+    background-color:black;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  
+    font: oblique bold 120% cursive;
+  
+    
+  }
+  
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  
+   
+  }
+  span:hover{
+    text-decoration: underline;
+  }
+  
+  .btn {
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    
+  }
+
+
+
+
+

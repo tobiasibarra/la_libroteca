@@ -1,0 +1,70 @@
+<h1><span class="blue">&lt;</span>PELICULAS<span class="blue">&gt;</span> <span class="yellow">ROMANCE</span></h1>
+
+    
+    <table class="container" >
+        <thead>
+            <tr>
+                <th *ngFor="let titulo of titulos"><h1>{{titulo}}</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let peli of pelis ; let i=index">
+                <td>{{peli.codigo}}</td>
+                <td>{{peli.nombre}}</td>
+                <td>{{peli.genero}}</td>
+                <td>{{peli.fecha}}</td>
+                <td (click)="detalles(peli)" style="cursor: pointer;"> Leer mas sobre la pelicula </td>
+                <td>{{peli.precio | currency }}</td>
+                <td>
+
+
+                    <button (click)="comprarItem(peli)" type="button" class="button">
+                        <span>$</span>
+                        
+                      </button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="todo">
+      
+        <div class="div1">
+             
+            <button (click)="votar1()"> El diario de Noa </button>
+            
+        </div>
+        <div class="div2" > 
+            
+            <button (click)="votar2()" > 500 días juntos </button>
+        
+        </div>
+        <div class="div3">
+            
+            <button (click)="votar3()" > Un paseo para recordar </button>
+            
+        </div>
+        <div class="div4">
+            
+            <button (click)="votar4()" > Cinema Paradiso </button>
+            
+        </div>
+        <div class="div5">
+            
+            <button (click)="votar5()" > La La Land </button>
+            
+        </div>
+ 
+    </div>
+
+    <div class="div6">   
+        <div *ngIf="voto1 > voto2 && voto1 > voto3 && voto1 > voto3 && voto1 > voto4 && voto1 > voto5">La mejor pelicula es: <strong style="color: rgb(36, 200, 250);">  El diario de Noa</strong>. Tiene {{voto1}} votos.</div>
+
+        <div *ngIf="voto2 > voto1 && voto2 > voto3 && voto2 > voto3 && voto2 > voto4 && voto2 > voto5">La mejor pelicula es: <strong style="color: rgb(36, 200, 250);"> 500 días juntos</strong>. Tiene {{voto2}} votos.</div>
+
+        <div *ngIf="voto3 > voto1 && voto3 > voto2 && voto3 > voto2 && voto3 > voto4 && voto3 > voto5">La mejor pelicula es: <strong style="color: rgb(36, 200, 250);"> Un paseo para recordar</strong>. Tiene {{voto3}} votos.</div>
+
+        <div *ngIf="voto4 > voto1 && voto4 > voto3 && voto4 > voto3 && voto4 > voto2 && voto4 > voto5">La mejor pelicula es: <strong style="color: rgb(36, 200, 250);"> Cinema Paradiso</strong>. Tiene {{voto4}} votos.</div>
+
+        <div *ngIf="voto5 > voto1 && voto5 > voto3 && voto5 > voto3 && voto5 > voto4 && voto5 > voto2">La mejor pelicula es: <strong style="color: rgb(36, 200, 250);"> La La Land</strong>. Tiene {{voto5}} votos.</div>
+    </div>

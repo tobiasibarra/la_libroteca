@@ -1,0 +1,69 @@
+<h1><span class="blue">&lt;</span>PELICULAS<span class="blue">&gt;</span> <span class="yellow">COMEDIA</span></h1>
+
+    
+    <table class="container" >
+        <thead>
+            <tr>
+                <th *ngFor="let titulo of titulos"><h1>{{titulo}}</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let peli of pelis ; let i=index">
+                <td>{{peli.codigo}}</td>
+                <td>{{peli.nombre}}</td>
+                <td>{{peli.genero}}</td>
+                <td>{{peli.fecha}}</td>
+                <td (click)="detalles(peli)" style="cursor: pointer;"> Leer mas sobre la pelicula </td>
+                <td>{{peli.precio | currency }}</td>
+                <td>
+                    
+                    <button (click)="comprarItem(peli)" type="button" class="button">
+                        <span>$</span>
+                        
+                      </button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="todo">
+      
+        <div class="div1">
+             
+            <button (click)="votar1()"> La otra Missy </button>
+            
+        </div>
+        <div class="div2" > 
+            
+            <button (click)="votar2()" > ¿Quién son los Millers? </button>
+        
+        </div>
+        <div class="div3">
+            
+            <button (click)="votar3()" >Noche de juegos </button>
+            
+        </div>
+        <div class="div4">
+            
+            <button (click)="votar4()" > Pasante de moda </button>
+            
+        </div>
+        <div class="div5">
+            
+            <button (click)="votar5()" >Vacaciones</button>
+            
+        </div>
+ 
+    </div>
+
+    <div class="div6">   
+        <div *ngIf="voto1 > voto2 && voto1 > voto3 && voto1 > voto3 && voto1 > voto4 && voto1 > voto5">La mejor pelicula es: <strong style="color: rgb(255, 49, 203);"> La otra Missy</strong>. Tiene {{voto1}} votos.</div>
+
+        <div *ngIf="voto2 > voto1 && voto2 > voto3 && voto2 > voto3 && voto2 > voto4 && voto2 > voto5">La mejor pelicula es: <strong style="color: rgb(255, 49, 203);"> ¿Quién son los Millers?</strong>. Tiene {{voto2}} votos.</div>
+
+        <div *ngIf="voto3 > voto1 && voto3 > voto2 && voto3 > voto2 && voto3 > voto4 && voto3 > voto5">La mejor pelicula es: <strong style="color: rgb(255, 49, 203);"> Noche de juegos</strong>. Tiene {{voto3}} votos.</div>
+
+        <div *ngIf="voto4 > voto1 && voto4 > voto3 && voto4 > voto3 && voto4 > voto2 && voto4 > voto5">La mejor pelicula es: <strong style="color: rgb(255, 49, 203);"> Pasante de moda</strong>. Tiene {{voto4}} votos.</div>
+
+        <div *ngIf="voto5 > voto1 && voto5 > voto3 && voto5 > voto3 && voto5 > voto4 && voto5 > voto2">La mejor pelicula es: <strong style="color: rgb(255, 49, 203);"> Vacaciones</strong>. Tiene {{voto5}} votos.</div>
+    </div>

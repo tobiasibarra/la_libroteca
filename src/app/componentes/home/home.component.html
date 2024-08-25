@@ -1,0 +1,46 @@
+
+
+
+<div class="container_fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="menu" style="height: 80px; width: 100%;">
+          <div class="logo">
+            <img src="assets/logo.png" alt="logo" style="cursor: pointer; width: 100px; padding-top: 5px;" (click)="goTo('libros')">
+          </div>
+          <div class="items">
+            <div class="item">
+              <span class="btn" (click)="goTo('peliculas')">PELICULAS</span>
+            </div>
+            <div class="item" style=" padding-left: 30px; ">
+              <span class="btn" [routerLink]="['/musica']">MUSICA</span>
+            </div>
+            <div class="item" style=" padding-left: 30px; ">
+              <span class="btn" [routerLink]="['/libros']">LIBROS</span>
+            </div>
+            
+  
+              <div class="item" style=" padding-left: 800px; ">
+                <img src="assets/carr.jpg" alt="logo"  [routerLink]="['/login']"  style="cursor: pointer; width: 50px; padding-top: 5px;">
+              </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+  
+        <router-outlet></router-outlet>
+  
+       
+      
+      </div>
+    </div>
+  
+
+
+
+
+
+
+

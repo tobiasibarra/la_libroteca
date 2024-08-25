@@ -1,0 +1,92 @@
+<section carrousel>
+
+  <input id="slide-0" name="carrousel" type="radio" checked />
+  <div class="slide">
+    <label for="slide-3" class="back">◀</label>
+    <div class="slide-content">
+      <img src="assets/ra.jpg" style="width: 400px;">
+      <h1>CD-Ramones- Ramones</h1>
+      <audio controls>
+        <source src="assets/tema1_Ramones.mp3" type="audio/mp3">
+    </audio>
+    </div>
+    <label for="slide-1" class="forward">▶</label>
+  </div>
+
+
+  <input id="slide-1" name="carrousel" type="radio" />
+  <div class="slide">
+    <label for="slide-0" class="back">◀</label>
+    <div class="slide-content">
+      <img src="assets/lp.jpg" style="width: 400px;">
+      <h1>CD-La Polla Records- No somos nada</h1>
+      <audio controls>
+        <source src="assets/tema2_LaP.mp3" type="audio/mp3">
+    </audio>
+    </div>
+    <label for="slide-2" class="forward">▶</label>
+  </div>
+
+  <input id="slide-2" name="carrousel" type="radio" />
+  <div class="slide">
+    <label for="slide-1" class="back">◀</label>
+    <div class="slide-content">
+      <img src="assets/sp.png" style="width: 400px;">
+      <h1>CD-Sex Pistols- Never Mind the Bollocks</h1>
+      <audio controls>
+        <source src="assets/tema3_SP.mp3" type="audio/mp3">
+    </audio>
+    </div>
+    <label for="slide-3" class="forward">▶</label>
+  </div>
+
+  <input id="slide-3" name="carrousel" type="radio" />
+  <div class="slide">
+    <label for="slide-2" class="back">◀</label>
+    <div class="slide-content">
+      <img src="assets/tc.jpg" style="width: 400px;">
+      <h1>CD-The Clash- London calling</h1>
+      <audio controls>
+        <source src="assets/tema4_TC.mp3" type="audio/mp3">
+    </audio>
+    </div>
+    <label for="slide-0" class="forward">▶</label>
+  </div>
+
+</section>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let t of titulos">{{t}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of Discos">
+            <td>{{d.codigo}}</td>
+            <td>{{d.nombre}} </td>
+            <td>{{d.precio | currency}}</td>
+            <td>
+              <img [src]="d.imagen" style="width: 150px;">
+            </td>
+            <td>
+
+
+              <button (click)="comprarItem(d)" type="button" class="button">
+                <span class="button__text">Agregar</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
+                    fill="none" class="svg">
+                    <line y2="19" y1="5" x2="12" x1="12"></line>
+                    <line y2="12" y1="12" x2="19" x1="5"></line>
+                  </svg></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

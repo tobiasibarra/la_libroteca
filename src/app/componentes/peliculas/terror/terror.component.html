@@ -1,0 +1,73 @@
+<h1><span class="blue">&lt;</span>PELICULAS<span class="blue">&gt;</span> <span class="yellow">TERROR</span></h1>
+
+    
+    <table class="container" >
+        <thead>
+            <tr>
+                <th *ngFor="let titulo of titulos"><h1>{{titulo}}</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let peli of pelis ; let indice =index">
+                <td>{{peli.codigo}}</td>
+                <td>{{peli.nombre}}</td>
+                <td>{{peli.genero}}</td>
+                <td>{{peli.fecha}}</td>
+                <td (click)="detalles(peli)" style="cursor: pointer;"> Leer mas sobre la pelicula </td>
+                <td>{{peli.precio | currency }}</td>
+                <td>
+
+
+                    <button (click)="comprarItem(peli)" type="button" class="button">
+                        <span>$</span>
+                        
+                      </button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="todo">
+      
+        <div class="div1">
+             
+            <button (click)="votar1()"> <span> Anabelle</span></button>
+            
+        </div>
+        <div class="div2" > 
+            
+            <button (click)="votar2()" > El exorcista </button>
+        
+        </div>
+        <div class="div3">
+            
+            <button (click)="votar3()" > El grito </button>
+            
+        </div>
+        <div class="div4">
+            
+            <button (click)="votar4()" > Host</button>
+            
+        </div>
+        <div class="div5">
+            
+            <button (click)="votar5()" > IT</button>
+            
+        </div>
+ 
+    </div>
+
+    <div class="div6">   
+            <div *ngIf="votoAna > votoExo && votoAna > votoGrito && votoAna > votoGrito && votoAna > votoHost && votoAna > votoIt">La mejor pelicula es: <strong style="color: red;"> Annabelle</strong>. Tiene {{votoAna}} votos.</div>
+
+            <div *ngIf="votoExo > votoAna && votoExo > votoGrito && votoExo > votoGrito && votoExo > votoHost && votoExo > votoIt">La mejor pelicula es: <strong style="color: red;"> El exorcista</strong>. Tiene {{votoExo}} votos.</div>
+
+            <div *ngIf="votoGrito > votoAna && votoGrito > votoExo && votoGrito > votoExo && votoGrito > votoHost && votoGrito > votoIt">La mejor pelicula es: <strong style="color: red;"> El grito</strong>. Tiene {{votoGrito}} votos.</div>
+
+            <div *ngIf="votoHost > votoAna && votoHost > votoGrito && votoHost > votoGrito && votoHost > votoExo && votoHost > votoIt">La mejor pelicula es: <strong style="color: red;"> Host</strong>. Tiene {{votoHost}} votos.</div>
+
+            <div *ngIf="votoIt > votoAna && votoIt > votoGrito && votoIt > votoGrito && votoIt > votoHost && votoIt > votoExo">La mejor pelicula es: <strong style="color: red;"> IT</strong>. Tiene {{votoIt}} votos.</div>
+
+        
+
+    </div> 
